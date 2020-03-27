@@ -1,8 +1,8 @@
 import 'dart:async';
 
+import 'package:climateorb/utils/global_translations.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:climateorb/utils/climateorb.dart';
 import 'package:climateorb/utils/navigator.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -56,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
                         padding: EdgeInsets.only(top: 10.0),
                       ),
                       Text(
-                        ClimateOrb.name,
+                        allTranslations.text("splashScreen.name"),
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -76,7 +76,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       padding: EdgeInsets.only(top: 20.0),
                     ),
                     Text(
-                      ClimateOrb.title,
+                      allTranslations.text("splashScreen.title"),
                       softWrap: true,
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -90,17 +90,16 @@ class _SplashScreenState extends State<SplashScreen> {
               Expanded(
                 flex: 1,
                 child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Text(
-                      ClimateOrb.made,
+                    alignment: Alignment.bottomCenter,
+                    child: Text(
+                      allTranslations.text("splashScreen.madeIn"),
                       softWrap: true,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0,
                           color: Colors.black),
-                    )
-                ),
+                    )),
               )
             ],
           )

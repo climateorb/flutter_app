@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:climateorb/utils/climateorb.dart';
+import 'package:climateorb/utils/global_translations.dart';
 import 'package:climateorb/utils/navigator.dart';
 import 'package:climateorb/widgets/WalkThrough.dart';
 
@@ -43,23 +43,23 @@ class IntroScreenState extends State<IntroScreen> {
             child: PageView(
               children: <Widget>[
                 WalkThrough(
-                  title: ClimateOrb.wt1,
-                  content: ClimateOrb.wc1,
+                  title: allTranslations.text("intro.page1.title"),
+                  content: allTranslations.text("intro.page1.content"),
                   imageIcon: 'images/climateorb-logo.png',
                 ),
                 WalkThrough(
-                  title: ClimateOrb.wt2,
-                  content: ClimateOrb.wc2,
+                  title: allTranslations.text("intro.page2.title"),
+                  content: allTranslations.text("intro.page2.content"),
                   imageIcon: 'images/prida-logo.png',
                 ),
                 WalkThrough(
-                  title: ClimateOrb.wt3,
-                  content: ClimateOrb.wc3,
+                  title: allTranslations.text("intro.page3.title"),
+                  content: allTranslations.text("intro.page3.content"),
                   imageIcon: 'images/breeze-logo.png',
                 ),
                 WalkThrough(
-                  title: ClimateOrb.wt4,
-                  content: ClimateOrb.wc4,
+                  title: allTranslations.text("intro.page4.title"),
+                  content: allTranslations.text("intro.page4.content"),
                   imageIcon: 'images/platform-logo.png',
                 ),
               ],
@@ -74,16 +74,20 @@ class IntroScreenState extends State<IntroScreen> {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
                 FlatButton(
-                  child: Text(lastPage ? "" : ClimateOrb.skip,
+                  child: Text(
+                      lastPage ? "" : allTranslations.text("intro.skip"),
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
                           fontSize: 16.0)),
                   onPressed: () =>
-                  lastPage ? null : ClimateOrbNavigator.goToHome(context),
+                      lastPage ? null : ClimateOrbNavigator.goToHome(context),
                 ),
                 FlatButton(
-                  child: Text(lastPage ? ClimateOrb.gotIt : ClimateOrb.next,
+                  child: Text(
+                      lastPage
+                          ? allTranslations.text("intro.gotIt")
+                          : allTranslations.text("intro.next"),
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
@@ -91,8 +95,8 @@ class IntroScreenState extends State<IntroScreen> {
                   onPressed: () => lastPage
                       ? ClimateOrbNavigator.goToHome(context)
                       : controller.nextPage(
-                      duration: Duration(milliseconds: 300),
-                      curve: Curves.easeIn),
+                          duration: Duration(milliseconds: 300),
+                          curve: Curves.easeIn),
                 ),
               ],
             ),

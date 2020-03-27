@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:climateorb/screens/drawer.dart';
-import 'package:climateorb/utils/climateorb.dart';
+import 'package:climateorb/utils/global_translations.dart';
 import 'package:climateorb/screens/webview_container.dart';
 import 'package:flutter_mdns_plugin/flutter_mdns_plugin.dart';
 
@@ -55,34 +55,32 @@ class _LocalScreenState extends State<LocalScreen> {
 
   Future<bool> _onBackPressed() {
     return showDialog(
-          context: context,
-          barrierDismissible: false, // user must tap button!
-          builder: (context) => new AlertDialog(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.0)),
-            title: new Text('Are you sure?'),
-            content: new Text('Do you want to exit the App?'),
-            actions: <Widget>[
-              RaisedButton(
-                color: Colors.blue,
-                onPressed: () => Navigator.of(context).pop(false),
-                child: Text(
-                  'No',
-                  style: TextStyle(fontSize: 18.0, color: Colors.white),
-                ),
-              ),
-              RaisedButton(
-                color: Colors.red,
-                onPressed: () => SystemChannels.platform
-                    .invokeMethod<void>('SystemNavigator.pop'),
-                child: Text(
-                  'Yes',
-                  style: TextStyle(fontSize: 18.0, color: Colors.white),
-                ),
-              ),
-            ],
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (context) => new AlertDialog(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0)),
+        title: new Text(allTranslations.text("dialog.title")),
+        content: new Text(allTranslations.text("dialog.content")),
+        actions: <Widget>[
+          FlatButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text(
+              allTranslations.text("dialog.no"),
+              style: TextStyle(fontSize: 16.0, color: Colors.red),
+            ),
           ),
-        ) ??
+          FlatButton(
+            onPressed: () => SystemChannels.platform
+                .invokeMethod<void>('SystemNavigator.pop'),
+            child: Text(
+              allTranslations.text("dialog.yes"),
+              style: TextStyle(fontSize: 16.0, color: Colors.blue),
+            ),
+          ),
+        ],
+      ),
+    ) ??
         false;
   }
 
@@ -178,7 +176,7 @@ class _LocalScreenState extends State<LocalScreen> {
           appBar: AppBar(
             elevation: 0.1,
             backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
-            title: Text(ClimateOrb.local),
+            title: Text(allTranslations.text("devices.title")),
           ),
           drawer: Drawer(child: climateOrbDrawer(context)),
           body: new Builder(builder: (BuildContext context) {

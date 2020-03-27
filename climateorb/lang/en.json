@@ -1,0 +1,89 @@
+{
+  "splashScreen": {
+    "name": "ClimateOrb",
+    "title": "Empowering Citizens\n For Climate Action",
+    "madeIn": "Made In India"
+  },
+  "intro": {
+    "page1": {
+      "title": "WELCOME",
+      "content": "ClimateOrb\n Empowering Citizens For Climate Action"
+    },
+    "page2": {
+      "title": "ClimateOrb Prida",
+      "content": "Environmental Sensing\n & Track Climate Conditions"
+    },
+    "page3": {
+      "title": "ClimateOrb Breeze",
+      "content": "Smart Air Purifier\n For Healthy Life"
+    },
+    "page4": {
+      "title": "ClimateOrb Platform",
+      "content": "Climate Action Through\n Global Education & Connectivity"
+    },
+    "skip": "SKIP",
+    "next": "NEXT",
+    "gotIt": "GOT IT"
+  },
+  "dialog": {
+    "title": "Exit the App?",
+    "content": "ClimateOrb App will be closed.",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "drawer": {
+    "item1": "Dashboard",
+    "item2": "Devices",
+    "item3": "Cloud",
+    "item4": "Blogs",
+    "item5": "About",
+    "item6": "Settings",
+    "item7": "Report an Issue",
+    "item8": "Help and Feedback"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "content": "Welcome to ClimateOrb"
+  },
+  "devices": {
+    "title": "Devices",
+    "snackBar": "Scanning for Wi-Fi Connected Devices"
+  },
+  "cloud": {
+    "title": "Cloud",
+    "content": "Access your ClimateOrb Device Over Cloud"
+  },
+  "blog": {
+    "title": "Blogs",
+    "content": "Read latest articles about our Climate Action Initiatives"
+  },
+  "about": {
+    "title": "About",
+    "content": "About ClimateOrb"
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": "Login/Register",
+    "profileSubtitle": "Account Settings",
+    "pushNotifications": "Push Notifications",
+    "onState": "On",
+    "offState": "Off",
+    "languages": {
+      "option": "Languages",
+      "title": "Change Language",
+      "snackBar": "Changing Language...",
+      "english": "English",
+      "chinese": "Chinese",
+      "hindi": "Hindi",
+      "spanish":"Spanish"
+    }
+  },
+  "reportIssue": {
+    "title": "Report an Issue",
+    "content": "Report to us if you encounter an issue!"
+  },
+  "helpFeedback": {
+    "title": "Help and Feedback",
+    "content": "Get instant Help and Provide Feedback"
+  }
+}

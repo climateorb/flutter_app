@@ -1,7 +1,7 @@
+import 'package:climateorb/utils/global_translations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:climateorb/screens/drawer.dart';
-import 'package:climateorb/utils/climateorb.dart';
 
 class AboutScreen extends StatefulWidget {
   AboutScreen({Key key, this.title}) : super(key: key);
@@ -19,24 +19,22 @@ class _AboutScreenState extends State<AboutScreen> {
       builder: (context) => new AlertDialog(
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.0)),
-        title: new Text('Are you sure?'),
-        content: new Text('Do you want to exit the App?'),
+        title: new Text(allTranslations.text("dialog.title")),
+        content: new Text(allTranslations.text("dialog.content")),
         actions: <Widget>[
-          RaisedButton(
-            color: Colors.blue,
+          FlatButton(
             onPressed: () => Navigator.of(context).pop(false),
             child: Text(
-              'No',
-              style: TextStyle(fontSize: 18.0, color: Colors.white),
+              allTranslations.text("dialog.no"),
+              style: TextStyle(fontSize: 16.0, color: Colors.red),
             ),
           ),
-          RaisedButton(
-            color: Colors.red,
+          FlatButton(
             onPressed: () => SystemChannels.platform
                 .invokeMethod<void>('SystemNavigator.pop'),
             child: Text(
-              'Yes',
-              style: TextStyle(fontSize: 18.0, color: Colors.white),
+              allTranslations.text("dialog.yes"),
+              style: TextStyle(fontSize: 16.0, color: Colors.blue),
             ),
           ),
         ],
@@ -55,7 +53,7 @@ class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
     Widget body = new Center(
-      child: new Text('About Screen Welcomes You'),
+      child: new Text(allTranslations.text("about.content")),
     );
     return new WillPopScope(
         onWillPop: _onBackPressed,
@@ -63,7 +61,7 @@ class _AboutScreenState extends State<AboutScreen> {
           appBar: AppBar(
             elevation: 0.1,
             backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
-            title: Text(ClimateOrb.about),
+            title: Text(allTranslations.text("about.title")),
           ),
           drawer: Drawer(child: climateOrbDrawer(context)),
           body: new Builder(builder: (BuildContext context) {
